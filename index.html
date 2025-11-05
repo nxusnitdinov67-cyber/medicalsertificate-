@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Защищённый документ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #container {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 340px;
+    }
+    input {
+      padding: 10px;
+      width: 80%;
+      margin: 15px 0;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background: #2563eb;
+      color: white;
+      border-radius: 8px;
+    }
+    button:hover {
+      background: #1e40af;
+    }
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+    img {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Emblem_of_Uzbekistan.svg/1179px-Emblem_of_Uzbekistan.svg.png" alt="Герб Узбекистана">
+    <h2>Введите пароль для доступа</h2>
+    <input type="password" id="password" placeholder="Пароль">
+    <button onclick="checkPassword()">Войти</button>
+    <p id="error" style="color:red;"></p>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      const correct = "2976";
+
+      if (input === correct) {
+        // 🔗 замени ССЫЛКУ НИЖЕ на свою PDF с GitHub
+        document.body.innerHTML = `
+          <iframe src="https://raw.githubusercontent.com/ТВОЙ_ЛОГИН/medical-sertificate/main/file.pdf"></iframe>
+        `;
+      } else {
+        document.getElementById("error").textContent = "Неверный пароль!";
+      }
+    }
+  </script>
+</body>
+</html>
